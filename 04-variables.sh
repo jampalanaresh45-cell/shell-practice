@@ -1,4 +1,5 @@
 #!/bin/bash
+###### Arguments for variables ######
 PERSON1=$1
 PERSON2=$2
 echo  "$PERSON1:: Welcome to Shell Scripting, $PERSON2"
