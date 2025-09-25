@@ -3,5 +3,4 @@
 
 echo "Enter your password:"
 read -s Password # Read password from user input
-
-echo "Password entered is: $Password"
+echo "Successfully read password."
