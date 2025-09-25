@@ -1,4 +1,4 @@
 #!/bin/bash
 #####Environment variables####
 
-echo "My name is $COURSE"
+echo "Course name is $COURSE"
