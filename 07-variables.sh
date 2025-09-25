@@ -3,7 +3,7 @@
 
 START_TIME=$(date +%s) # Capture start time in seconds since
 
-sleep 10& # Simulate a process with sleep
+sleep 10 # Simulate a process with sleep
 
 END_TIME=$(date +%s) # Capture end time in seconds since
 
