@@ -8,3 +8,5 @@ echo "special char variable for current Directory $PWD"
 echo "special char variable for current user $USER"
 echo "special char variable for current home directory $HOME"
 echo "special char variable for last command exit status $$"
+sleep 10&
+echo "special char variable for last command exit status $!"
