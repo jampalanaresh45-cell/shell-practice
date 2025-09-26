@@ -8,5 +8,5 @@ echo "special char variable for current Directory:$PWD"
 echo "special char variable for current user:$USER"
 echo "special char variable for current home directory:$HOME"
 echo "special PID exit status:$$"
-sleep 10 &
+sleep 50 &
 echo "special char variable for last background process id:$!"
