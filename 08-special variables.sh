@@ -7,3 +7,4 @@ echo "script variable $0" ##To accept script name
 echo "special char variable for current Directory $PWD"
 echo "special char variable for current user $USER"
 echo "special char variable for current home directory $HOME"
+echo "special char variable for last command exit status $$"
