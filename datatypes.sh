@@ -9,5 +9,5 @@ echo "SUM is ${SUM}"
 
 Contents=("AWS" "Linux" "Shell")
 echo "the present contents of the Devsecops course are: ${Contents[@]}"
-echo "the number of contents in the Devsecops course are: ${Contents[0]}" 
-echo "the number of contents in the Devsecops course are: ${Contents[1]}"
+echo "the first content in the Devsecops course is: ${Contents[0]}" 
+echo "the second content in the Devsecops course is: ${Contents[1]}"
