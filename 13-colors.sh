@@ -5,5 +5,5 @@ G="\e[32m" #Green
 Y="\e[33m" #Yellow
 N="\e[0m"  #No Color
 
-echo -e "$G This is Green Color"
-echo "check the color"
+echo -e "$G This is Green Color $N"
+echo "Check the color"
