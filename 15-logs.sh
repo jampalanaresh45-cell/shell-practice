@@ -11,20 +11,20 @@ SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOG_FOLDER
-echo "script started at $(date)"
+echo "script started at $(date)" | tee -a $LOG_FILE
 
 USERID=$(id -u)
 if [ $USERID -ne 0 ]; then
-    echo "ERROR:: User must have privilege access"
+    echo "ERROR:: User must have privilege access" | tee -a $LOG_FILE
     exit 1
 fi
 
 VALIDATE(){
         if [ $1 -ne 0 ]; then
-        echo -e "ERROR ::Installation of $R...$2 is failed $N"
+        echo -e "ERROR ::Installation of $R...$2 is failed $N" | tee -a $LOG_FILE
         exit 1
     else
-        echo -e "Installation of $G...$2 succeeded $N"
+        echo -e "Installation of $G...$2 succeeded $N" | tee -a $LOG_FILE
     fi
     }
     dnf list installed mysql &>>LOG_FILE
@@ -32,7 +32,7 @@ VALIDATE(){
     dnf install mysql -y &>>LOG_FILE
     VALIDATE $? "mysql"
     else
-        echo -e "MySQL is already installed $Y...SKIPPING $N"
+        echo -e "MySQL is already installed $Y...SKIPPING $N" | tee -a $LOG_FILE
     fi
 
     dnf list installed nginx &>>LOG_FILE
@@ -40,7 +40,7 @@ VALIDATE(){
     dnf install nginx -y &>>LOG_FILE
         VALIDATE $? "nginx"
     else
-        echo -e "Nginx is already installed $Y...SKIPPING $N"
+        echo -e "Nginx is already installed $Y...SKIPPING $N" | tee -a $LOG_FILE
     fi
 
     dnf list installed python3 &>>LOG_FILE
@@ -48,6 +48,6 @@ VALIDATE(){
     dnf install python3 -y &>>LOG_FILE
         VALIDATE $? "python3"
     else
-        echo -e "Python3 is already installed $Y...SKIPPING $N"
+        echo -e "Python3 is already installed $Y...SKIPPING $N" | tee -a $LOG_FILE
     fi
 
