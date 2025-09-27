@@ -4,6 +4,8 @@
 
 NUMBER1=200
 NUMBER2=300
-NAME="Devops"
-SUM=$((NUMBER1 + NUMBER2+$NAME))
+SUM=$((NUMBER1 + NUMBER2))
 echo "SUM is ${SUM}"
+
+Contents=$("AWS" "Linux" "Shell")
+echo "the present contents of the Devsecops course are: ${contents[@]}"
