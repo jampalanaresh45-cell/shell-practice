@@ -5,6 +5,13 @@ G="\e[32m" #Green
 Y="\e[33m" #Yellow
 N="\e[0m"  #No Color
 
+LOG_FOLDER="/var/log/shellscript"
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+
+mkdir -p $LOG_FOLDER
+echo "script started at $(date)" | tee -a $LOG_FILE
+
 USERID=$(id -u)
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: User must have privilege access"
