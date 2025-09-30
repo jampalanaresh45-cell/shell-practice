@@ -3,4 +3,4 @@
 NAME=NARESH
 echo "My name is $NAME"
 echo "Printing process id: $$"
-sh 19-script.sh
+#sh 19-script.sh
