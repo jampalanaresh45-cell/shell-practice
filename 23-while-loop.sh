@@ -1,5 +1,5 @@
 #!/bin/bash
-count = 5
+count=5
 
 echo "staring countdown ..."
 while [ $count -gt 0 ]
