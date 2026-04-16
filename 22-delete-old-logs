@@ -20,3 +20,10 @@ if [ ! -d $SOURCE_DIR]; then
 fi
 
 FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14)
+
+while IFS= read -r filepath; 
+do
+    echo -e "Deleting the file: $filepath $G[Success]$N" | tee -a $LOG_FILE
+    rm -rf $filepath
+    echo -e "Deleted the file: $filepath $G[Success]$N" | tee -a $LOG_FILE
+done <<< "$FILES_TO_DELETE"
