@@ -44,11 +44,11 @@ FILES=$(find $SOURCE_DIR -type f -mtime +"$DAYS")
 
 if [ ! -z "${FILES}" ]; then
     echo -e "file found $FILES" 
-    TIMESTAMP=$(date +"%F-%H-%M)
+    TIMESTAMP=$(date +"%F-%H-%M")
     ZIP_FILE="$DESTINATION_DIR/app-logs-$TIMESTAMP.zip"
     echo "Zip file name: $ZIP_FILE" 
     echo $FILES | zip -@ -j "$ZIP_FILE"
 
 else
-    echo -e "No files found to archive ...$Y....Exiting the script $N" | tee -a $LOG_FILE
+    echo -e "No files found to archive ...$Y....Exiting the script $N"
 fi 
