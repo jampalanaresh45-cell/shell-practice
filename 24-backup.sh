@@ -11,7 +11,8 @@ DAYS=${3:-14}
 
 LOG_FOLDER="/var/log/shellscript"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+# LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOG_FOLDER/backup.log" ## modified to run script as command ###
 
 
 mkdir -p $LOG_FOLDER
