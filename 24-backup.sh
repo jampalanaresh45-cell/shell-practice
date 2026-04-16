@@ -23,9 +23,9 @@ if [ $USERID -ne 0 ]; then
 fi
 
 USAGE(){
-    echo -e "$R USAGE:: sudo sh 24-backup.sh <SOURCE_DIR> <DESTINATION_DIR> <Days>[Optional, default 14 days] $N" | tee -a $LOG_FILE
+    echo -e "$R USAGE:: $0 sudo sh 24-backup.sh <SOURCE_DIR> <DESTINATION_DIR> <Days>[Optional, default 14 days] $N" | tee -a $LOG_FILE
 }
-if [ $# -le 2 ]; then
+if [ $# -lt 2 ]; then
     USAGE 
     exit 1
 fi
