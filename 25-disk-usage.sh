@@ -1,7 +1,7 @@
 #!/bin/bash
 DISK_USAGE=$(df -hT | grep -v Filesystem)
 DISK_THRESHOLD=75 ## In project we keepp it as 75 ##
-IPADDRESS=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
+IPADDRESS=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
 MESSAGE=""
 
 while IFS= read -r line; 
