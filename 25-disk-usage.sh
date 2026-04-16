@@ -9,7 +9,7 @@ do
     USAGE=$(echo $line | awk '{print $6}' | cut -d "%" -f1)
     PARTITION=$(echo $line | awk '{print $7}')
     if [ $USAGE -gt $DISK_THRESHOLD ]; then
-        MESSAGE+="Disk usage on partition $PARTITION is above threshold: $USAGE% \n" ## Escaping new line character in message body ##
+        MESSAGE+="Disk usage on partition $PARTITION is above threshold: $USAGE% <br>" ## Escaping new line character in message body ##
     fi
 done <<< "$DISK_USAGE"
 
