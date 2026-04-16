@@ -40,7 +40,7 @@ if [ ! -d $DESTINATION_DIR ]; then
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -type f -mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -type f -mtime +"$DAYS")
 
 if [ ! -z "${FILES}" ]; then
     echo -e "file found" 
