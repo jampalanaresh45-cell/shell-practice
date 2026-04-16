@@ -27,6 +27,7 @@ USAGE(){
 }
 if [ $# -le 2 ]; then
     USAGE 
+    exit 1
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
@@ -34,12 +35,12 @@ if [ ! -d $SOURCE_DIR ]; then
     exit 1
 fi
 
-if [ ! -d DESTINATION_DIR ]; then
+if [ ! -d $DESTINATION_DIR ]; then
     echo -e "$R ERROR: $DESTINATION_DIR directory does not exist $N" | tee -a $LOG_FILE
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -type f -mtime +14)
+FILES=$(find $SOURCE_DIR -type f -mtime +$DAYS)
 
 if [ ! -z "${FILES}" ]; then
     echo -e "file found" 
