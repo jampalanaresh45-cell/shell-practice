@@ -1,5 +1,5 @@
 #!/bin/bash
-DISK_USAGE=$(df -hT | grep Filesystem)
+DISK_USAGE=$(df -hT | grep -v Filesystem)
 
 while IFS= read -r line; do
     echo "Processing: $line"
