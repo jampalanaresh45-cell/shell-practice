@@ -5,11 +5,12 @@ R="\e[31m" #Red
 G="\e[32m" #Green
 Y="\e[33m" #Yellow
 N="\e[0m"  #No Color
-SOURCE_DIR=$1
-DESTINATION_DIR=$2
 LOG_FOLDER="/var/log/shellscript"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+SOURCE_DIR=$1
+DESTINATION_DIR=$2
+DAYS=${3:-14}
 
 mkdir -p $LOG_FOLDER
 echo "script started at $(date)" | tee -a $LOG_FILE
@@ -34,4 +35,12 @@ fi
 if [ ! -d DESTINATION_DIR ]; then
     echo -e "$R ERROR: $DESTINATION_DIR directory does not exist $N" | tee -a $LOG_FILE
     exit 1
+fi
+
+FILES=$(find $SOURCE_DIR -type f -mtime +14)
+
+if [ ! -z "${FILES}" ]; then
+    echo -e "file found" 
+else
+    echo -e "No files found to archive ...$Y....Exiting the script $N" | tee -a $LOG_FILE
 fi
