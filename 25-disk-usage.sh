@@ -21,3 +21,4 @@ sh 26-mail.sh "jampalanaresh45@gmail.com" "Disk Usage Alert" "High Disk Usage" "
 # SUBJECT="$2"
 # ALERT_TYPE="$3"
 # MESSAGE_BODY="$4"
+# IP_ADDRESS=$5
