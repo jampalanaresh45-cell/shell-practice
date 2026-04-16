@@ -5,12 +5,14 @@ R="\e[31m" #Red
 G="\e[32m" #Green
 Y="\e[33m" #Yellow
 N="\e[0m"  #No Color
-LOG_FOLDER="/var/log/shellscript"
-SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
 DAYS=${3:-14}
+
+LOG_FOLDER="/var/log/shellscript"
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+
 
 mkdir -p $LOG_FOLDER
 echo "script started at $(date)" | tee -a $LOG_FILE
